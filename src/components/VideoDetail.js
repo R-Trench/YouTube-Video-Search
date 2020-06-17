@@ -1,10 +1,13 @@
 import React from 'react'
 
 const VideoDetail = (props) => {
+
+    //while loading -> extremely brief here in this use case build out loading page if fetching more results
     if (!props.video){
-        return <div></div>
+        return <div>loading...</div>
     }
 
+    //iframe src, with dynamic variable based of video id of http response
     const videoSrc = `https://www.youtube.com/embed/${props.video.id.videoId}`
     
     return (
